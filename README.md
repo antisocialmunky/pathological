@@ -1,4 +1,5 @@
 pathillogical.js
 ==========
 
-Detects and adds some utility functions to node.js for platform independent paths.
+I'm tired of people being too lazy to correct platform independent errors in Node.js.
+This library converts file paths to and from Linux and Windows.  Also converts to locally detected path structure.
