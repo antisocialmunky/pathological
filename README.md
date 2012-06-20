@@ -1,5 +1,34 @@
-pathological.js
+#pathological.js
 ==========
 
 I'm tired of people being too slow to correct platform independent errors in Node.js.
-This library converts file paths to and from Linux and Windows.  Also converts to locally detected path structure.
+This library wraps the API for the standard path library.  It will automatically convert all paths to either Windows or Nix depending on initial require call.
+
+###Syntax
+========
+Auto-convert paths to current system
+
+    path = require('pathological')
+  or
+  
+    path = require('pathological').sys();
+
+Auto-convert paths to \'s
+
+    path = require('pathological').win();
+
+Auto-convert paths to /'s
+
+    path = require('pathological').nix();
+
+Manual Convert to \'s
+
+    path.winPath(path)
+
+Manual Convert to /'s
+
+    path.nixPath(path)
+    
+Manual Convert to current system
+
+    path.sysPath(path)
