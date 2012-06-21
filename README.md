@@ -4,6 +4,8 @@
 I'm tired of people being too slow to correct platform independent errors in Node.js.
 This library wraps the API for the standard path library.  It will automatically convert all paths to either Windows or Nix depending on initial require call.
 
+    npm install pathological
+
 ###Syntax
 ========
 Auto-convert paths to current system
