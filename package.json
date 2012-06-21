@@ -2,7 +2,7 @@
   "author": "David Tai",
   "name": "pathillogical.js",
   "description": "Nix and Windows path conversion library",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/antisocialmunky/pathillogical.js.git"
