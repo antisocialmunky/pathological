@@ -1,8 +1,11 @@
 var path = require('path');
 
+var isWin = process.platform === 'win32';
+
+var pathological;
 var winPath = function(p){return p.replace(/\//g,'\\');};
-var nixPath = function(p){return p.replace(/\\/g,'/');};
-var sysPath = function(p){return process.platform === 'win32' ? winPath(p) : nixPath(p);},
+var nixPath = function(p){if(p.charAt(1) === ':'){pathological.lastDrive = p.slice(0,2);} return p.replace(/^.:/,'').replace(/\\/g,'/');};
+var sysPath = function(p){return isWin ? winPath(p) : nixPath(p);},
 
 
 pathological = {
@@ -21,7 +24,9 @@ pathological = {
     modifier    : sysPath,
     win         : function(){pathological.modifier = winPath;return pathological;},
     nix         : function(){pathological.modifier = nixPath;return pathological;},
-    sys         : function(){pathological.modifier = sysPath;return pathological;}
+    sys         : function(){pathological.modifier = sysPath;return pathological;},
+    PATH_SEPERATOR : isWin ? '\\' : '/',
+    lastDrive   : 'C:'
 };
 
 module.exports = pathological;

@@ -10,7 +10,7 @@ Auto-convert paths to current system
 
     path = require('pathological')
   or
-  
+
     path = require('pathological').sys();
 
 Auto-convert paths to \'s
@@ -28,7 +28,15 @@ Manual Convert to \'s
 Manual Convert to /'s
 
     path.nixPath(path)
-    
+
 Manual Convert to current system
 
     path.sysPath(path)
+
+Get seperator
+
+    path.PATH_SEPERATOR
+
+Get last windows drive letter encountered (defaults to C:)
+
+    path.lastDrive
