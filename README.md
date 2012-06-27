@@ -1,4 +1,4 @@
-#pathological.js
+#pathological
 ==========
 
 I'm tired of people being too slow to correct platform independent errors in Node.js.
